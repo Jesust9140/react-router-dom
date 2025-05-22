@@ -6,6 +6,9 @@ import NavBar from './components/NavBar/NavBar';
 import PokemonList from './components/PokemonList/PokemonList';
 import { Route, Routes } from 'react-router';
 import PokemonDetails from './components/PokemonDetails/PokemonDetails';
+// src/components/PokemonDetails/PokemonDetails.jsx
+
+import { useParams } from 'react-router';
 
 
 const initialState = [
@@ -25,9 +28,8 @@ const App = () => {
       <NavBar />
       <h1>Welcome!</h1>
       <Routes>
-        <Route path='/' element={<h2><u>Home</u></h2>} />
+        <Route path="/" element={<h2>Home Page</h2>} />
         <Route path="/pokemon" element={<PokemonList pokemon={pokemon} />} />
-        {/* New route to view a specific pokemon */}
         <Route
           path="/pokemon/:pokemonId"
           element={<PokemonDetails pokemon={pokemon} />}
